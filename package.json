@@ -1,0 +1,21 @@
+{
+  "name": "faceai-photo-sharing",
+  "version": "2.0.0",
+  "description": "AI Face Recognition Photo Sharing & Photo Selection Software",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["face-recognition", "photo-sharing", "ai", "machine-learning", "mongodb"],
+  "author": "FaceAI",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.0",
+    "mongodb": "^6.3.0"
+  }
+}

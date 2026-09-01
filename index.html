@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceAI - AI Face Recognition Photo Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" stroke="url(#logo-grad)" stroke-width="2.5"/>
+                    <circle cx="12" cy="13" r="2" fill="url(#logo-grad)"/>
+                    <circle cx="20" cy="13" r="2" fill="url(#logo-grad)"/>
+                    <path d="M11 20c1.5 2.5 8.5 2.5 10 0" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32">
+                            <stop stop-color="#6366f1"/>
+                            <stop offset="1" stop-color="#a855f7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>FaceAI</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#demo">Demo</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#gallery">Gallery</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-ghost" id="loginBtn">Log In</a>
+                <a href="#" class="btn btn-primary" id="signupBtn">Get Started Free</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Powered by Advanced AI</div>
+                <h1>Find <span class="gradient-text">Every Face</span><br>in Every Photo</h1>
+                <p class="hero-description">
+                    Upload your photos and let our AI automatically detect, recognize, and organize faces.
+                    Share personalized photo collections with each person in just one click.
+                </p>
+                <div class="hero-actions">
+                    <a href="#demo" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                        Upload Photos
+                    </a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">2M+</span>
+                        <span class="stat-label">Photos Processed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.2%</span>
+                        <span class="stat-label">Accuracy Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Happy Users</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="photo-grid-demo">
+                    <div class="demo-photo photo-1">
+                        <div class="face-detection-box">
+                            <span class="face-label">Sarah</span>
+                        </div>
+                    </div>
+                    <div class="demo-photo photo-2">
+                        <div class="face-detection-box detected">
+                            <span class="face-label">Mike</span>
+                        </div>
+                    </div>
+                    <div class="demo-photo photo-3">
+                        <div class="face-detection-box">
+                            <span class="face-label">Emma</span>
+                        </div>
+                    </div>
+                    <div class="demo-photo photo-4">
+                        <div class="face-detection-box detected">
+                            <span class="face-label">John</span>
+                        </div>
+                    </div>
+                    <div class="demo-photo photo-5">
+                        <div class="face-detection-box">
+                            <span class="face-label">Lisa</span>
+                        </div>
+                    </div>
+                    <div class="demo-photo photo-6">
+                        <div class="face-detection-box detected">
+                            <span class="face-label">Alex</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2>Everything You Need for <span class="gradient-text">Smart Photo Management</span></h2>
+                <p>Our AI-powered platform makes photo sharing effortless with cutting-edge face recognition technology.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </div>
+                    <h3>AI Face Detection</h3>
+                    <p>Automatically detect and identify faces in your photos using advanced deep learning algorithms with 99%+ accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Smart Grouping</h3>
+                    <p>Automatically group photos by person. Find every photo of a specific person across your entire collection instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+                    </div>
+                    <h3>One-Click Sharing</h3>
+                    <p>Share personalized photo albums with each person. They only see photos they appear in &mdash; private and secure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>End-to-end encryption. Your photos are processed securely and never stored on our servers without your consent.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                    </div>
+                    <h3>Smart Selection</h3>
+                    <p>AI picks the best photos where everyone looks great. No more scrolling through hundreds of similar shots.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    </div>
+                    <h3>Bulk Upload</h3>
+                    <p>Upload thousands of photos at once. Our cloud infrastructure handles massive galleries with blazing speed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2>Three Simple Steps to <span class="gradient-text">Organized Photos</span></h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Upload Your Photos</h3>
+                        <p>Drag and drop your photos or select from your device. We support JPEG, PNG, HEIC, and RAW formats. Upload entire albums at once.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="upload-animation">
+                            <div class="upload-zone">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                                <span>Drop photos here</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI Detects & Groups Faces</h3>
+                        <p>Our AI engine scans every photo, detects all faces, and groups them by person. It learns and improves with each upload.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="scan-animation">
+                            <div class="scan-photo">
+                                <div class="scan-line"></div>
+                                <div class="face-boxes">
+                                    <div class="face-box fb-1"></div>
+                                    <div class="face-box fb-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Share & Enjoy</h3>
+                        <p>Select photos and share personalized collections with each person. They receive a private link to download their photos.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="share-animation">
+                            <div class="share-card">
+                                <div class="share-person">
+                                    <div class="avatar">S</div>
+                                    <span>Sarah's Album</span>
+                                </div>
+                                <div class="share-count">24 photos</div>
+                                <button class="share-btn-sm">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Live Demo</span>
+                <h2>Try Face Recognition <span class="gradient-text">Right Now</span></h2>
+                <p>Upload a photo and watch our AI detect faces in real-time.</p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-upload-area" id="demoUploadArea">
+                    <input type="file" id="demoFileInput" accept="image/*" multiple hidden>
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <div class="upload-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <path d="m21 15-5-5L5 21"/>
+                            </svg>
+                        </div>
+                        <h3>Drop your photo here</h3>
+                        <p>or click to browse files</p>
+                        <span class="upload-formats">Supports: JPG, PNG, HEIC</span>
+                    </div>
+                    <div class="demo-result" id="demoResult" style="display:none;">
+                        <div class="result-image-wrapper">
+                            <canvas id="demoCanvas"></canvas>
+                        </div>
+                        <div class="result-sidebar">
+                            <h3>Detected Faces</h3>
+                            <div class="detected-faces-list" id="detectedFacesList"></div>
+                            <div class="demo-actions">
+                                <button class="btn btn-primary" id="shareBtn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+                                    Share Selected
+                                </button>
+                                <button class="btn btn-outline" id="clearBtn">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Gallery</span>
+                <h2>See It In <span class="gradient-text">Action</span></h2>
+            </div>
+            <div class="gallery-toolbar">
+                <input type="file" id="galleryFileInput" accept="image/*" multiple hidden>
+                <button class="btn btn-primary" id="galleryUploadBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                    Upload Photos
+                </button>
+                <span class="gallery-hint" id="galleryHint">Log in to upload photos to your gallery</span>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder gp-1">
+                        <div class="gp-face">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+                        </div>
+                        <div class="gp-tag">Event Photos</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder gp-2">
+                        <div class="gp-face">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+                        </div>
+                        <div class="gp-tag">Family Reunion</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder gp-3">
+                        <div class="gp-face">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+                        </div>
+                        <div class="gp-tag">Wedding</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder gp-4">
+                        <div class="gp-face">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+                        </div>
+                        <div class="gp-tag">Vacation</div>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-wide">
+                    <div class="gallery-placeholder gp-5">
+                        <div class="gp-face gp-face-multi">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                        </div>
+                        <div class="gp-tag">Team Building</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder gp-6">
+                        <div class="gp-face">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+                        </div>
+                        <div class="gp-tag">Birthday Party</div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-gallery">
+                <h3 class="my-gallery-title">Your Photos</h3>
+                <p class="my-gallery-empty" id="galleryEmpty">No photos uploaded yet.</p>
+                <div class="gallery-grid uploaded" id="uploadedGallery"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2>Simple, Transparent <span class="gradient-text">Pricing</span></h2>
+                <p>Start free. Upgrade when you need more.</p>
+            </div>
+            <div class="pricing-toggle">
+                <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" id="yearlyLabel">Yearly <span class="save-badge">Save 20%</span></span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <div class="price">
+                            <span class="amount">$0</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100 photos/month</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Face detection</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Up to 10 people</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Basic sharing</li>
+                        <li class="disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Smart selection</li>
+                        <li class="disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Priority processing</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="price">
+                            <span class="amount" data-monthly="9.99" data-yearly="7.99">$9.99</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5,000 photos/month</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Advanced face recognition</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Unlimited people</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Smart selection</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Private sharing links</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-block">Start Free Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="amount" data-monthly="29.99" data-yearly="23.99">$29.99</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Unlimited photos</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> API access</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Team management</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Custom branding</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> SLA guarantee</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Dedicated account manager</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline btn-block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2>Loved by <span class="gradient-text">Thousands</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"FaceAI saved me hours of work after our wedding. Guests got their personalized photo collections within minutes!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div>
+                            <strong>Jessica D.</strong>
+                            <span>Event Photographer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"We use FaceAI for our corporate events. The face grouping is incredibly accurate and saves our team tons of time."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <strong>Mark R.</strong>
+                            <span>Marketing Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Finally I can find all photos of my kids without scrolling through thousands of pictures. This app is a game changer!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AK</div>
+                        <div>
+                            <strong>Anita K.</strong>
+                            <span>Parent & Travel Blogger</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to organize your photos with AI?</h2>
+                <p>Join 50,000+ users who already use FaceAI to share smarter.</p>
+                <div class="cta-actions">
+                    <a href="#demo" class="btn btn-primary btn-lg">Start Free &mdash; No Credit Card</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="14" stroke="url(#logo-grad-f)" stroke-width="2.5"/>
+                            <circle cx="12" cy="13" r="2" fill="url(#logo-grad-f)"/>
+                            <circle cx="20" cy="13" r="2" fill="url(#logo-grad-f)"/>
+                            <path d="M11 20c1.5 2.5 8.5 2.5 10 0" stroke="url(#logo-grad-f)" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="logo-grad-f" x1="0" y1="0" x2="32" y2="32">
+                                    <stop stop-color="#6366f1"/>
+                                    <stop offset="1" stop-color="#a855f7"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>FaceAI</span>
+                    </a>
+                    <p>AI-powered photo sharing that puts the right photos in the right hands.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">API</a>
+                    <a href="#">Integrations</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FaceAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Login / Register Modal ===== -->
+    <div class="auth-overlay" id="authOverlay" style="display:none;">
+        <div class="auth-modal">
+            <button class="auth-close" id="authClose">&times;</button>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Log In</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+            </div>
+
+            <!-- Login form -->
+            <form id="loginForm" class="auth-form active">
+                <h3 class="auth-title">Welcome back</h3>
+                <label class="auth-field">
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="you@example.com" required>
+                </label>
+                <label class="auth-field">
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="••••••••" required>
+                </label>
+                <div class="auth-role-note">
+                    Demo accounts:
+                    <code>abhishektiwari234000@gmail.com / owner123</code> ·
+                    <code>admin@faceai.com / admin123</code> ·
+                    <code>user@faceai.com / user123</code>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                <p class="auth-error" id="loginError"></p>
+            </form>
+
+            <!-- Register form -->
+            <form id="registerForm" class="auth-form">
+                <h3 class="auth-title">Create an account</h3>
+                <label class="auth-field">
+                    <span>Name</span>
+                    <input type="text" name="name" placeholder="Your name" required>
+                </label>
+                <label class="auth-field">
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="you@example.com" required>
+                </label>
+                <label class="auth-field">
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="Choose a password" required>
+                </label>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                <p class="auth-error" id="registerError"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== Logged-in user bar ===== -->
+    <div class="user-bar" id="userBar" style="display:none;">
+        <div class="user-bar-info">
+            <span class="user-avatar" id="userAvatar"></span>
+            <div>
+                <strong id="userName"></strong>
+                <span class="user-role" id="userRole"></span>
+            </div>
+        </div>
+        <button class="btn btn-outline btn-sm" id="logoutBtn">Log Out</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
