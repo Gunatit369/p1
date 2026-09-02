@@ -4,6 +4,44 @@ const UserModel = require('../models/User');
 
 const sessions = new Map();
 
+function createSession(user) {
+    const token = crypto.randomBytes(24).toString('hex');
+    sessions.set(token, {
+        userId: user._id,
+        role: user.role || 'user',
+        createdAt: Date.now(),
+    });
+    return token;
+}
+
+async function findOrCreateGithubUser(githubUser) {
+    const email = (githubUser.email || '').toLowerCase();
+    let user = email ? await userStore.getUserByEmail(email) : null;
+
+    if (!user) {
+        user = await userStore.getUsers().then(users =>
+            users.find(u => u.githubId === githubUser.id) || null
+        );
+    }
+
+    if (user) {
+        if (!user.githubId) {
+            await userStore.updateUser(user._id, { githubId: githubUser.id });
+        }
+    } else {
+        const newUser = UserModel.create({
+            name: githubUser.name || githubUser.login || 'GitHub User',
+            email: email || `${githubUser.login}@github.local`,
+            role: 'user',
+        });
+        newUser.githubId = githubUser.id;
+        newUser.photos = newUser.photos || [];
+        const result = await userStore.addUser(newUser);
+        return { user: newUser, created: true };
+    }
+    return { user, created: false };
+}
+
 function hashPassword(password) {
     const salt = crypto.randomBytes(16).toString('hex');
     const hash = crypto.createHash('sha256').update(salt + password).digest('hex');
@@ -68,12 +106,7 @@ async function login({ email, password }) {
     if (!verifyPassword(password, user.password)) {
         throw new Error('Invalid email or password');
     }
-    const token = crypto.randomBytes(24).toString('hex');
-    sessions.set(token, {
-        userId: user._id,
-        role: user.role || 'user',
-        createdAt: Date.now(),
-    });
+    const token = createSession(user);
     return {
         token,
         user: UserModel.serialize(user),
@@ -122,4 +155,6 @@ module.exports = {
     getSession,
     authenticate,
     requireRole,
+    createSession,
+    findOrCreateGithubUser,
 };

@@ -98,6 +98,32 @@ a {
 .btn-lg { padding: 14px 32px; font-size: 1rem; border-radius: var(--radius-md); }
 .btn-block { width: 100%; justify-content: center; }
 
+.btn-github {
+    background: #24292e;
+    color: #fff;
+    border: 1.5px solid #24292e;
+}
+.btn-github:hover {
+    background: #2f363d;
+    transform: translateY(-1px);
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
 /* ---- Navbar ---- */
 .navbar {
     position: fixed;

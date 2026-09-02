@@ -10,6 +10,7 @@ const db = require('./services/mongoDB');
 const apiRouter = require('./routes/api');
 const recognizeRouter = require('./routes/recognize');
 const authRouter = require('./routes/auth');
+const githubAuthRouter = require('./routes/githubAuth');
 const authService = require('./services/auth');
 
 app.use(cors());
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.static(__dirname));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth', authRouter);
+app.use('/api/auth', githubAuthRouter);
 app.use('/api', recognizeRouter);
 app.use('/api', apiRouter);
 

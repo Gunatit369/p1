@@ -18,6 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const userAvatar = document.getElementById('userAvatar');
     const logoutBtn = document.getElementById('logoutBtn');
 
+    // Handle GitHub OAuth callback (token passed in URL query)
+    (function handleGitHubCallback() {
+        const params = new URLSearchParams(window.location.search);
+        const ghToken = params.get('gh_token');
+        const ghUser = params.get('gh_user');
+        if (ghToken) {
+            auth.token = ghToken;
+            localStorage.setItem('faceai_token', ghToken);
+            try {
+                auth.user = ghUser ? JSON.parse(ghUser) : null;
+            } catch (e) { auth.user = null; }
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    })();
+
     function setActiveTab(tab) {
         document.querySelectorAll('.auth-tab').forEach(t => {
             t.classList.toggle('active', t.dataset.tab === tab);
